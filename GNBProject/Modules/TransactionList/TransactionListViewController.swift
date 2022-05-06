@@ -15,6 +15,7 @@ final class TransactionListViewController: BaseViewController {
 
     // MARK: - Component Declaration
     private var tableView: UITableView!
+    private var activityIndicator: UIActivityIndicatorView!
 
     private enum ViewTraits {
         static let margins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -24,13 +25,15 @@ final class TransactionListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        activityIndicator.startAnimating()
         presenter.prepareView()
     }
     
 
     // MARK: - Setup
 
-    override func setupComponents() {
+    override func setupComponents() {        
         tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.isHidden = true
@@ -39,6 +42,10 @@ final class TransactionListViewController: BaseViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        activityIndicator = UIActivityIndicatorView()
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(activityIndicator)
     }
 
     override func setupConstraints() {
@@ -46,7 +53,10 @@ final class TransactionListViewController: BaseViewController {
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
 
@@ -67,6 +77,8 @@ extension TransactionListViewController: TransactionListViewControllerProtocol {
     
     func showTransactions(transactionList: [TransactionList.TransactionViewModel]) {
         self.transactionList = transactionList
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
         tableView.isHidden = false
         tableView.reloadData()
     }

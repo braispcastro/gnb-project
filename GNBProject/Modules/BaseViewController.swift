@@ -28,6 +28,7 @@ class BaseViewController: UIViewController {
         setupConstraints()
         
         setupNavigationItem()
+        setupView()
     }
     
     // MARK: - Setup
@@ -44,5 +45,9 @@ class BaseViewController: UIViewController {
     
     private func setupNavigationItem() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
+    private func setupView() {
+        view.backgroundColor = UIColor.white
     }
 }
