@@ -16,10 +16,6 @@ final class TransactionInfoViewController: BaseViewController {
     private enum ViewTraits {
         static let margins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
-    
-    public enum AccessibilityIds {
-        
-    }
 
     // MARK: - ViewLife Cycle
     
@@ -35,6 +31,7 @@ final class TransactionInfoViewController: BaseViewController {
     }
 
     // MARK: - Actions
+    
 
     // MARK: Private Methods
 

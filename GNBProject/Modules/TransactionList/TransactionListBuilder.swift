@@ -13,9 +13,14 @@ final class TransactionListBuilder {
     static func build() -> UIViewController {
 
         let viewController: TransactionListViewController = TransactionListViewController()
+        let interactor: TransactionListInteractor = TransactionListInteractor(bankService: BankService())
         let router: TransactionListRouter = TransactionListRouter(viewController: viewController)
-        let presenter: TransactionListPresenter = TransactionListPresenter(viewController: viewController, router: router)
+        let presenter: TransactionListPresenter = TransactionListPresenter(viewController: viewController,
+                                                                           router: router,
+                                                                           interactor: interactor)
+        
         viewController.presenter = presenter
+        interactor.presenter = presenter
 
         return viewController
     }

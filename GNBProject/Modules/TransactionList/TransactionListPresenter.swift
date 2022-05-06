@@ -8,25 +8,73 @@
 import Foundation
 
 protocol TransactionListViewControllerProtocol {
-
+    func show(viewModel: TransactionList.ViewModel)
+    func showTransactions(transactionList: [TransactionList.TransactionViewModel])
+    func backendError(error: String)
 }
 
 protocol TransactionListPresenterProtocol {
-
+    func prepareView()
 }
 
 final class TransactionListPresenter<T: TransactionListViewControllerProtocol, U: TransactionListRouterProtocol> {
     
     private let viewController: TransactionListViewControllerProtocol!
+    private let interactor: TransactionListInteractorProtocol!
     private let router: TransactionListRouterProtocol!
+    
+    private var rates: [Bank.Rate] = []
+    private var transactions: [Bank.Transaction] = []
 
-    init(viewController: T, router: U) {
+    init(viewController: T, router: U,
+         interactor: TransactionListInteractorProtocol) {
         self.viewController = viewController
         self.router = router
+        self.interactor = interactor
+    }
+    
+    // MARK: - Private Methods
+    
+    private func buildTransactions() {
+        let uniqueTransactions = Array(Set(transactions.map { TransactionList.TransactionViewModel(name: $0.sku) }))
+        viewController.showTransactions(transactionList: uniqueTransactions)
     }
     
 }
 
+// MARK: - TransactionListPresenterProtocol
 extension TransactionListPresenter: TransactionListPresenterProtocol {
 
+    func prepareView() {
+        interactor.getRates()
+        interactor.getTransactions()
+        
+        let viewModel = TransactionList.ViewModel(title: "Transaction List")
+        viewController.show(viewModel: viewModel)
+    }
+    
+}
+
+// MARK: - TransactionListInteractorCallbackProtocol
+extension TransactionListPresenter: TransactionListInteractorCallbackProtocol {
+    
+    func rates(_ rates: [Bank.Rate]) {
+        self.rates = rates
+        if !transactions.isEmpty {
+            buildTransactions()
+        }
+    }
+    
+    func transactions(_ transactions: [Bank.Transaction]) {
+        self.transactions = transactions
+        if !rates.isEmpty {
+            buildTransactions()
+        }
+    }
+    
+    func error(_ error: String?) {
+        let err: String = error ?? "Unknown error"
+        viewController.backendError(error: err)
+    }
+    
 }

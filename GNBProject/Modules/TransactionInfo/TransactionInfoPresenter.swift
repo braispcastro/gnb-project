@@ -12,7 +12,7 @@ protocol TransactionInfoViewControllerProtocol {
 }
 
 protocol TransactionInfoPresenterProtocol {
-
+    func prepareView()
 }
 
 final class TransactionInfoPresenter<T: TransactionInfoViewControllerProtocol, U: TransactionInfoRouterProtocol> {
@@ -28,5 +28,9 @@ final class TransactionInfoPresenter<T: TransactionInfoViewControllerProtocol, U
 }
 
 extension TransactionInfoPresenter: TransactionInfoPresenterProtocol {
+    
+    func prepareView() {
+        
+    }
 
 }

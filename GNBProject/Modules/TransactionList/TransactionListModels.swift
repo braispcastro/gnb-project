@@ -8,5 +8,13 @@
 import Foundation
 
 enum TransactionList {
+    
+    struct ViewModel {
+        let title: String
+    }
+    
+    struct TransactionViewModel: Hashable {
+        let name: String
+    }
 
 }

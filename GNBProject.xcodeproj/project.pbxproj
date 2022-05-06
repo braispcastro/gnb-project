@@ -24,6 +24,10 @@
 		8B2B4A782825A0F600EADF27 /* TransactionInfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B4A732825A0F600EADF27 /* TransactionInfoBuilder.swift */; };
 		8B2B4A792825A0F600EADF27 /* TransactionInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B4A742825A0F600EADF27 /* TransactionInfoRouter.swift */; };
 		8B2B4A7A2825A0F600EADF27 /* TransactionInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B4A752825A0F600EADF27 /* TransactionInfoViewController.swift */; };
+		8B2B4A7D2825AABD00EADF27 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8B2B4A7C2825AABD00EADF27 /* Alamofire */; };
+		8B2B4A822825AE1F00EADF27 /* BankService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B4A812825AE1F00EADF27 /* BankService.swift */; };
+		8B2B4A842825B04200EADF27 /* BankModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B4A832825B04200EADF27 /* BankModels.swift */; };
+		8B2B4A862825B44400EADF27 /* TransactionListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B4A852825B44400EADF27 /* TransactionListInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,9 @@
 		8B2B4A732825A0F600EADF27 /* TransactionInfoBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionInfoBuilder.swift; sourceTree = "<group>"; };
 		8B2B4A742825A0F600EADF27 /* TransactionInfoRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionInfoRouter.swift; sourceTree = "<group>"; };
 		8B2B4A752825A0F600EADF27 /* TransactionInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionInfoViewController.swift; sourceTree = "<group>"; };
+		8B2B4A812825AE1F00EADF27 /* BankService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankService.swift; sourceTree = "<group>"; };
+		8B2B4A832825B04200EADF27 /* BankModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankModels.swift; sourceTree = "<group>"; };
+		8B2B4A852825B44400EADF27 /* TransactionListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B2B4A7D2825AABD00EADF27 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				8B2B4A2F28259A6B00EADF27 /* AppDelegate.swift */,
+				8B2B4A7E2825ADED00EADF27 /* Core */,
 				8B2B4A5F28259B6A00EADF27 /* Modules */,
 				8B2B4A6128259BD700EADF27 /* Resources */,
 				8B2B4A6028259B7100EADF27 /* SupportingFiles */,
@@ -173,6 +182,7 @@
 				8B2B4A6828259D4F00EADF27 /* TransactionListBuilder.swift */,
 				8B2B4A6728259D4F00EADF27 /* TransactionListViewController.swift */,
 				8B2B4A6428259D4F00EADF27 /* TransactionListPresenter.swift */,
+				8B2B4A852825B44400EADF27 /* TransactionListInteractor.swift */,
 				8B2B4A6628259D4F00EADF27 /* TransactionListModels.swift */,
 				8B2B4A6528259D4F00EADF27 /* TransactionListRouter.swift */,
 			);
@@ -199,6 +209,31 @@
 			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
+		8B2B4A7E2825ADED00EADF27 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8B2B4A7F2825ADF600EADF27 /* Services */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8B2B4A7F2825ADF600EADF27 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8B2B4A802825AE0100EADF27 /* Bank */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8B2B4A802825AE0100EADF27 /* Bank */ = {
+			isa = PBXGroup;
+			children = (
+				8B2B4A812825AE1F00EADF27 /* BankService.swift */,
+				8B2B4A832825B04200EADF27 /* BankModels.swift */,
+			);
+			path = Bank;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -215,6 +250,9 @@
 			dependencies = (
 			);
 			name = GNBProject;
+			packageProductDependencies = (
+				8B2B4A7C2825AABD00EADF27 /* Alamofire */,
+			);
 			productName = GNBProject;
 			productReference = 8B2B4A2C28259A6B00EADF27 /* GNBProject.app */;
 			productType = "com.apple.product-type.application";
@@ -287,6 +325,9 @@
 				Base,
 			);
 			mainGroup = 8B2B4A2328259A6B00EADF27;
+			packageReferences = (
+				8B2B4A7B2825AABD00EADF27 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 8B2B4A2D28259A6B00EADF27 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -334,13 +375,16 @@
 				8B2B4A6C28259D4F00EADF27 /* TransactionListViewController.swift in Sources */,
 				8B2B4A772825A0F600EADF27 /* TransactionInfoPresenter.swift in Sources */,
 				8B2B4A782825A0F600EADF27 /* TransactionInfoBuilder.swift in Sources */,
+				8B2B4A842825B04200EADF27 /* BankModels.swift in Sources */,
 				8B2B4A3028259A6B00EADF27 /* AppDelegate.swift in Sources */,
 				8B2B4A762825A0F600EADF27 /* TransactionInfoModels.swift in Sources */,
 				8B2B4A6928259D4F00EADF27 /* TransactionListPresenter.swift in Sources */,
 				8B2B4A6F28259EA500EADF27 /* BaseViewController.swift in Sources */,
+				8B2B4A862825B44400EADF27 /* TransactionListInteractor.swift in Sources */,
 				8B2B4A6A28259D4F00EADF27 /* TransactionListRouter.swift in Sources */,
 				8B2B4A792825A0F600EADF27 /* TransactionInfoRouter.swift in Sources */,
 				8B2B4A7A2825A0F600EADF27 /* TransactionInfoViewController.swift in Sources */,
+				8B2B4A822825AE1F00EADF27 /* BankService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,7 +557,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GNBProject/Info.plist;
+				INFOPLIST_FILE = GNBProject/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = GNB;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -543,7 +587,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GNBProject/Info.plist;
+				INFOPLIST_FILE = GNBProject/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = GNB;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -680,6 +724,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B2B4A7B2825AABD00EADF27 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B2B4A7C2825AABD00EADF27 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B2B4A7B2825AABD00EADF27 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8B2B4A2428259A6B00EADF27 /* Project object */;
 }
