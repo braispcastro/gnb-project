@@ -19,6 +19,12 @@ final class TransactionInfoViewController: BaseViewController {
 
     // MARK: - ViewLife Cycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        presenter.prepareView()
+    }
+    
 
     // MARK: - Setup
 

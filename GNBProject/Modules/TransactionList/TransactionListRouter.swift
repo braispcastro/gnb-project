@@ -8,7 +8,7 @@
 import Foundation
 
 protocol TransactionListRouterProtocol {
-
+    func navigateToInformation(transactions: [Bank.Transaction], rates: [Bank.Rate])
 }
 
 class TransactionListRouter: TransactionListRouterProtocol {
@@ -17,6 +17,11 @@ class TransactionListRouter: TransactionListRouterProtocol {
     
     init(viewController: TransactionListViewController) {
         self.viewController = viewController
+    }
+    
+    func navigateToInformation(transactions: [Bank.Transaction], rates: [Bank.Rate]) {
+        let vc = TransactionInfoBuilder.build(transactions: transactions, rates: rates)
+        viewController.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

@@ -19,10 +19,16 @@ final class TransactionInfoPresenter<T: TransactionInfoViewControllerProtocol, U
     
     private let viewController: TransactionInfoViewControllerProtocol!
     private let router: TransactionInfoRouterProtocol!
+    private let rates: [Bank.Rate]!
+    private let transactions: [Bank.Transaction]!
 
-    init(viewController: T, router: U) {
+    init(viewController: T, router: U,
+         rates: [Bank.Rate],
+         transactions: [Bank.Transaction]) {
         self.viewController = viewController
         self.router = router
+        self.rates = rates
+        self.transactions = transactions
     }
     
 }

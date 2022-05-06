@@ -15,6 +15,7 @@ protocol TransactionListViewControllerProtocol {
 
 protocol TransactionListPresenterProtocol {
     func prepareView()
+    func transactionSelected(name: String)
 }
 
 final class TransactionListPresenter<T: TransactionListViewControllerProtocol, U: TransactionListRouterProtocol> {
@@ -49,8 +50,13 @@ extension TransactionListPresenter: TransactionListPresenterProtocol {
         interactor.getRates()
         interactor.getTransactions()
         
-        let viewModel = TransactionList.ViewModel(title: "Transaction List")
+        let viewModel = TransactionList.ViewModel(title: "Transactions")
         viewController.show(viewModel: viewModel)
+    }
+    
+    func transactionSelected(name: String) {
+        let transactionsFiltered = transactions.filter { $0.sku == name }
+        router.navigateToInformation(transactions: transactionsFiltered, rates: rates)
     }
     
 }

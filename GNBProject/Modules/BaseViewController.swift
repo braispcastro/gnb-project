@@ -27,7 +27,7 @@ class BaseViewController: UIViewController {
         setupComponents()
         setupConstraints()
         
-        setupNavigationItem()
+        //setupNavigationItem()
         setupView()
     }
     

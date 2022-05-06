@@ -14,12 +14,9 @@ final class TransactionListViewController: BaseViewController {
     private var transactionList: [TransactionList.TransactionViewModel] = []
 
     // MARK: - Component Declaration
+    
     private var tableView: UITableView!
     private var activityIndicator: UIActivityIndicatorView!
-
-    private enum ViewTraits {
-        static let margins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    }
 
     // MARK: - ViewLife Cycle
     
@@ -60,11 +57,6 @@ final class TransactionListViewController: BaseViewController {
         ])
     }
 
-    // MARK: - Actions
-    
-
-    // MARK: Private Methods
-
 }
 
 // MARK: - TransactionListViewControllerProtocol
@@ -84,6 +76,8 @@ extension TransactionListViewController: TransactionListViewControllerProtocol {
     }
     
     func backendError(error: String) {
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
         //TODO: Show error alert
     }
     
@@ -108,6 +102,8 @@ extension TransactionListViewController: UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let item = transactionList[indexPath.row]
+        presenter.transactionSelected(name: item.name)
     }
     
     
