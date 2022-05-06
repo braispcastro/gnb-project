@@ -38,7 +38,7 @@ final class TransactionListPresenter {
     // MARK: - Private Methods
     
     private func buildTransactions() {
-        let uniqueTransactions = Array(Set(transactions.map { TransactionList.TransactionViewModel(name: $0.sku) }))
+        let uniqueTransactions = Array(Set(transactions.map { TransactionList.TransactionViewModel(sku: $0.sku) }))
         viewController.showTransactions(transactionList: uniqueTransactions)
     }
     

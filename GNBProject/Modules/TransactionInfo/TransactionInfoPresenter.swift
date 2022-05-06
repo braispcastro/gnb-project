@@ -8,7 +8,7 @@
 import Foundation
 
 protocol TransactionInfoViewControllerProtocol {
-
+    func show(viewModel: TransactionInfo.ViewModel)
 }
 
 protocol TransactionInfoPresenterProtocol {
@@ -29,12 +29,33 @@ final class TransactionInfoPresenter {
         self.transactions = transactions
     }
     
+    // MARK: - Private Methods
+    
+    private func convertTransactionsToEuros(transactions: [Bank.Transaction]) -> [TransactionInfo.Transaction] {
+        getAllRates()
+        var convertedTransactions: [TransactionInfo.Transaction] = []
+        transactions.forEach { transaction in
+            convertedTransactions.append(TransactionInfo.Transaction(sku: transaction.sku, euros: "\(transaction.amount) \(transaction.currency)"))
+        }
+        
+        return convertedTransactions
+    }
+    
+    private func getAllRates() {
+        //TODO: Dijkstra
+    }
+    
 }
 
 extension TransactionInfoPresenter: TransactionInfoPresenterProtocol {
     
     func prepareView() {
+        let convertedTransactions = convertTransactionsToEuros(transactions: transactions)
+        let viewModel = TransactionInfo.ViewModel(title: transactions.first!.sku,
+                                                  transactions: convertedTransactions,
+                                                  total: "Total: 100 EUR")
         
+        viewController.show(viewModel: viewModel)
     }
 
 }

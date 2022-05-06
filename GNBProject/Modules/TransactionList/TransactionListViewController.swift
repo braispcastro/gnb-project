@@ -97,15 +97,14 @@ extension TransactionListViewController: UITableViewDataSource, UITableViewDeleg
             fatalError("Not registered for tableView")
         }
         
-        cell.textLabel?.text = transactionList[indexPath.row].name
+        cell.textLabel?.text = transactionList[indexPath.row].sku
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let item = transactionList[indexPath.row]
-        presenter.transactionSelected(name: item.name)
+        presenter.transactionSelected(name: item.sku)
     }
-    
     
 }

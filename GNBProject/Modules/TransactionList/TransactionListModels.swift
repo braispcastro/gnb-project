@@ -14,7 +14,7 @@ enum TransactionList {
     }
     
     struct TransactionViewModel: Hashable {
-        let name: String
+        let sku: String
     }
 
 }
