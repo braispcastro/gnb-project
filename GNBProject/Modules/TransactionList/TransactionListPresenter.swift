@@ -18,7 +18,7 @@ protocol TransactionListPresenterProtocol {
     func transactionSelected(name: String)
 }
 
-final class TransactionListPresenter<T: TransactionListViewControllerProtocol, U: TransactionListRouterProtocol> {
+final class TransactionListPresenter {
     
     private let viewController: TransactionListViewControllerProtocol!
     private let interactor: TransactionListInteractorProtocol!
@@ -27,7 +27,8 @@ final class TransactionListPresenter<T: TransactionListViewControllerProtocol, U
     private var rates: [Bank.Rate] = []
     private var transactions: [Bank.Transaction] = []
 
-    init(viewController: T, router: U,
+    init(viewController: TransactionListViewControllerProtocol,
+         router: TransactionListRouterProtocol,
          interactor: TransactionListInteractorProtocol) {
         self.viewController = viewController
         self.router = router

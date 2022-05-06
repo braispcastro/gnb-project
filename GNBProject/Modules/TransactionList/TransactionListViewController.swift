@@ -42,6 +42,7 @@ final class TransactionListViewController: BaseViewController {
         
         activityIndicator = UIActivityIndicatorView()
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.transform = CGAffineTransform(scaleX: 3, y: 3)
         view.addSubview(activityIndicator)
     }
 

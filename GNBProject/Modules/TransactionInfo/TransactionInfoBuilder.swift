@@ -13,9 +13,7 @@ final class TransactionInfoBuilder {
     static func build(transactions: [Bank.Transaction], rates: [Bank.Rate]) -> UIViewController {
 
         let viewController: TransactionInfoViewController = TransactionInfoViewController()
-        let router: TransactionInfoRouter = TransactionInfoRouter(viewController: viewController)
         let presenter: TransactionInfoPresenter = TransactionInfoPresenter(viewController: viewController,
-                                                                           router: router,
                                                                            rates: rates,
                                                                            transactions: transactions)
         
