@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 protocol TransactionListRouterProtocol {
+    func showAlert(message: String)
     func navigateToInformation(transactions: [Bank.Transaction], rates: [Bank.Rate])
 }
 
@@ -17,6 +19,12 @@ class TransactionListRouter: TransactionListRouterProtocol {
     
     init(viewController: TransactionListViewController) {
         self.viewController = viewController
+    }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Accept", style: .default, handler: nil))
+        viewController.navigationController?.present(alert, animated: true, completion: nil)
     }
     
     func navigateToInformation(transactions: [Bank.Transaction], rates: [Bank.Rate]) {

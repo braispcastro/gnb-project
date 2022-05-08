@@ -10,7 +10,7 @@ import Foundation
 protocol TransactionListViewControllerProtocol {
     func show(viewModel: TransactionList.ViewModel)
     func showTransactions(transactionList: [TransactionList.TransactionViewModel])
-    func backendError(error: String)
+    func stopActivityIndicator()
 }
 
 protocol TransactionListPresenterProtocol {
@@ -80,8 +80,8 @@ extension TransactionListPresenter: TransactionListInteractorCallbackProtocol {
     }
     
     func error(_ error: String?) {
-        let err: String = error ?? "Unknown error"
-        viewController.backendError(error: err)
+        viewController.stopActivityIndicator()
+        router.showAlert(message: error ?? "Unknown error")
     }
     
 }

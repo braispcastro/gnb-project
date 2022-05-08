@@ -41,7 +41,8 @@ final class TransactionInfoPresenter {
         transactions.forEach { transaction in
             if let rate = getConversionRate(from: transaction.currency, to: "EUR"), let price = Double(transaction.amount) {
                 let roundedPrice = (price * rate).roundHalfToEven()
-                convertedTransactions.append(TransactionInfo.Transaction(sku: transaction.sku, euros: "\(roundedPrice) EUR"))
+                convertedTransactions.append(TransactionInfo.Transaction(sku: "\(transaction.sku) - \(transaction.amount) \(transaction.currency)",
+                                                                         euros: "Converted value: \(roundedPrice) EUR"))
                 total += roundedPrice
             }
         }
@@ -51,8 +52,9 @@ final class TransactionInfoPresenter {
     
     private func getAllRates() {
         exchanges = AdjacencyList<String>()
-        let uniqueCurrency = Array(Set(rates.map { $0.from }))
         exchangeGraph = [:]
+        
+        let uniqueCurrency = Array(Set(rates.map { $0.from }))
         uniqueCurrency.forEach { item in
             exchangeGraph[item] = exchanges.createVertex(data: item)
         }

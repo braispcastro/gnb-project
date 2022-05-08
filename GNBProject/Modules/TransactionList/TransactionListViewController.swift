@@ -70,16 +70,14 @@ extension TransactionListViewController: TransactionListViewControllerProtocol {
     
     func showTransactions(transactionList: [TransactionList.TransactionViewModel]) {
         self.transactionList = transactionList
-        activityIndicator.stopAnimating()
-        activityIndicator.isHidden = true
+        stopActivityIndicator()
         tableView.isHidden = false
         tableView.reloadData()
     }
     
-    func backendError(error: String) {
+    func stopActivityIndicator() {
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
-        //TODO: Show error alert
     }
     
 }
