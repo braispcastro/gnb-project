@@ -23,7 +23,7 @@ final class TransactionListInteractor {
     var presenter: TransactionListInteractorCallbackProtocol!
     private let bankService: BankService!
 
-    init(bankService: BankService) {
+    init(bankService: BankService = BankService()) {
         self.bankService = bankService
     }
 }

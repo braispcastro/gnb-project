@@ -36,7 +36,6 @@
 		8BEBD6FE2827CE08002B7784 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 8BEBD6FD2827CE08002B7784 /* Nimble */; };
 		8BEBD7032827CEEF002B7784 /* TransactionListPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBD7022827CEEF002B7784 /* TransactionListPresenterTest.swift */; };
 		8BEBD7072827D721002B7784 /* TransactionInfoPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBD7062827D721002B7784 /* TransactionInfoPresenterTest.swift */; };
-		8BEBD7092827DF6D002B7784 /* TransactionListInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBD7082827DF6D002B7784 /* TransactionListInteractorTest.swift */; };
 		8BEBD70B2827E427002B7784 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBD70A2827E427002B7784 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,7 +79,6 @@
 		8BEBD6F82827CDA6002B7784 /* XCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
 		8BEBD7022827CEEF002B7784 /* TransactionListPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListPresenterTest.swift; sourceTree = "<group>"; };
 		8BEBD7062827D721002B7784 /* TransactionInfoPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionInfoPresenterTest.swift; sourceTree = "<group>"; };
-		8BEBD7082827DF6D002B7784 /* TransactionListInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListInteractorTest.swift; sourceTree = "<group>"; };
 		8BEBD70A2827E427002B7784 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -289,7 +287,6 @@
 			isa = PBXGroup;
 			children = (
 				8BEBD7022827CEEF002B7784 /* TransactionListPresenterTest.swift */,
-				8BEBD7082827DF6D002B7784 /* TransactionListInteractorTest.swift */,
 			);
 			path = TransactionList;
 			sourceTree = "<group>";
@@ -446,7 +443,6 @@
 				8BEBD7072827D721002B7784 /* TransactionInfoPresenterTest.swift in Sources */,
 				8BEBD6F92827CDA6002B7784 /* XCTestCase.swift in Sources */,
 				8BEBD7032827CEEF002B7784 /* TransactionListPresenterTest.swift in Sources */,
-				8BEBD7092827DF6D002B7784 /* TransactionListInteractorTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
