@@ -10,9 +10,6 @@
 		8B2B4A3028259A6B00EADF27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B4A2F28259A6B00EADF27 /* AppDelegate.swift */; };
 		8B2B4A3928259A6D00EADF27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B2B4A3828259A6D00EADF27 /* Assets.xcassets */; };
 		8B2B4A3C28259A6D00EADF27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2B4A3A28259A6D00EADF27 /* LaunchScreen.storyboard */; };
-		8B2B4A4728259A6E00EADF27 /* GNBProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B4A4628259A6E00EADF27 /* GNBProjectTests.swift */; };
-		8B2B4A5128259A6E00EADF27 /* GNBProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B4A5028259A6E00EADF27 /* GNBProjectUITests.swift */; };
-		8B2B4A5328259A6E00EADF27 /* GNBProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B4A5228259A6E00EADF27 /* GNBProjectUITestsLaunchTests.swift */; };
 		8B2B4A6928259D4F00EADF27 /* TransactionListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B4A6428259D4F00EADF27 /* TransactionListPresenter.swift */; };
 		8B2B4A6A28259D4F00EADF27 /* TransactionListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B4A6528259D4F00EADF27 /* TransactionListRouter.swift */; };
 		8B2B4A6B28259D4F00EADF27 /* TransactionListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B4A6628259D4F00EADF27 /* TransactionListModels.swift */; };
@@ -34,17 +31,13 @@
 		8B9FC8BF2827588F008F2894 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FC8BE2827588F008F2894 /* LinkedList.swift */; };
 		8B9FC8C12827589A008F2894 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FC8C02827589A008F2894 /* Queue.swift */; };
 		8BEBD6F12827BBBB002B7784 /* Double+HalfToEven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBD6F02827BBBB002B7784 /* Double+HalfToEven.swift */; };
+		8BEBD6F92827CDA6002B7784 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBD6F82827CDA6002B7784 /* XCTestCase.swift */; };
+		8BEBD6FC2827CE08002B7784 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8BEBD6FB2827CE08002B7784 /* Alamofire */; };
+		8BEBD6FE2827CE08002B7784 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 8BEBD6FD2827CE08002B7784 /* Nimble */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		8B2B4A4328259A6E00EADF27 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8B2B4A2428259A6B00EADF27 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8B2B4A2B28259A6B00EADF27;
-			remoteInfo = GNBProject;
-		};
-		8B2B4A4D28259A6E00EADF27 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8B2B4A2428259A6B00EADF27 /* Project object */;
 			proxyType = 1;
@@ -60,10 +53,6 @@
 		8B2B4A3B28259A6D00EADF27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B2B4A3D28259A6D00EADF27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B2B4A4228259A6E00EADF27 /* GNBProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GNBProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B2B4A4628259A6E00EADF27 /* GNBProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBProjectTests.swift; sourceTree = "<group>"; };
-		8B2B4A4C28259A6E00EADF27 /* GNBProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GNBProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B2B4A5028259A6E00EADF27 /* GNBProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBProjectUITests.swift; sourceTree = "<group>"; };
-		8B2B4A5228259A6E00EADF27 /* GNBProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8B2B4A6428259D4F00EADF27 /* TransactionListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListPresenter.swift; sourceTree = "<group>"; };
 		8B2B4A6528259D4F00EADF27 /* TransactionListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListRouter.swift; sourceTree = "<group>"; };
 		8B2B4A6628259D4F00EADF27 /* TransactionListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListModels.swift; sourceTree = "<group>"; };
@@ -84,6 +73,7 @@
 		8B9FC8BE2827588F008F2894 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		8B9FC8C02827589A008F2894 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		8BEBD6F02827BBBB002B7784 /* Double+HalfToEven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+HalfToEven.swift"; sourceTree = "<group>"; };
+		8BEBD6F82827CDA6002B7784 /* XCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B2B4A4928259A6E00EADF27 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				8BEBD6FC2827CE08002B7784 /* Alamofire in Frameworks */,
+				8BEBD6FE2827CE08002B7784 /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,8 +102,8 @@
 			children = (
 				8B2B4A2E28259A6B00EADF27 /* GNBProject */,
 				8B2B4A4528259A6E00EADF27 /* GNBProjectTests */,
-				8B2B4A4F28259A6E00EADF27 /* GNBProjectUITests */,
 				8B2B4A2D28259A6B00EADF27 /* Products */,
+				8BEBD6FA2827CE08002B7784 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,7 +112,6 @@
 			children = (
 				8B2B4A2C28259A6B00EADF27 /* GNBProject.app */,
 				8B2B4A4228259A6E00EADF27 /* GNBProjectTests.xctest */,
-				8B2B4A4C28259A6E00EADF27 /* GNBProjectUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,18 +131,9 @@
 		8B2B4A4528259A6E00EADF27 /* GNBProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				8B2B4A4628259A6E00EADF27 /* GNBProjectTests.swift */,
+				8BEBD6F82827CDA6002B7784 /* XCTestCase.swift */,
 			);
 			path = GNBProjectTests;
-			sourceTree = "<group>";
-		};
-		8B2B4A4F28259A6E00EADF27 /* GNBProjectUITests */ = {
-			isa = PBXGroup;
-			children = (
-				8B2B4A5028259A6E00EADF27 /* GNBProjectUITests.swift */,
-				8B2B4A5228259A6E00EADF27 /* GNBProjectUITestsLaunchTests.swift */,
-			);
-			path = GNBProjectUITests;
 			sourceTree = "<group>";
 		};
 		8B2B4A5F28259B6A00EADF27 /* Modules */ = {
@@ -284,6 +259,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		8BEBD6FA2827CE08002B7784 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -321,27 +303,13 @@
 				8B2B4A4428259A6E00EADF27 /* PBXTargetDependency */,
 			);
 			name = GNBProjectTests;
+			packageProductDependencies = (
+				8BEBD6FB2827CE08002B7784 /* Alamofire */,
+				8BEBD6FD2827CE08002B7784 /* Nimble */,
+			);
 			productName = GNBProjectTests;
 			productReference = 8B2B4A4228259A6E00EADF27 /* GNBProjectTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		8B2B4A4B28259A6E00EADF27 /* GNBProjectUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8B2B4A5C28259A6E00EADF27 /* Build configuration list for PBXNativeTarget "GNBProjectUITests" */;
-			buildPhases = (
-				8B2B4A4828259A6E00EADF27 /* Sources */,
-				8B2B4A4928259A6E00EADF27 /* Frameworks */,
-				8B2B4A4A28259A6E00EADF27 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8B2B4A4E28259A6E00EADF27 /* PBXTargetDependency */,
-			);
-			name = GNBProjectUITests;
-			productName = GNBProjectUITests;
-			productReference = 8B2B4A4C28259A6E00EADF27 /* GNBProjectUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -358,10 +326,7 @@
 					};
 					8B2B4A4128259A6E00EADF27 = {
 						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = 8B2B4A2B28259A6B00EADF27;
-					};
-					8B2B4A4B28259A6E00EADF27 = {
-						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 						TestTargetID = 8B2B4A2B28259A6B00EADF27;
 					};
 				};
@@ -377,6 +342,7 @@
 			mainGroup = 8B2B4A2328259A6B00EADF27;
 			packageReferences = (
 				8B2B4A7B2825AABD00EADF27 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8BEBD6F52827CD66002B7784 /* XCRemoteSwiftPackageReference "Nimble" */,
 			);
 			productRefGroup = 8B2B4A2D28259A6B00EADF27 /* Products */;
 			projectDirPath = "";
@@ -384,7 +350,6 @@
 			targets = (
 				8B2B4A2B28259A6B00EADF27 /* GNBProject */,
 				8B2B4A4128259A6E00EADF27 /* GNBProjectTests */,
-				8B2B4A4B28259A6E00EADF27 /* GNBProjectUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -400,13 +365,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8B2B4A4028259A6E00EADF27 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B2B4A4A28259A6E00EADF27 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -448,16 +406,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B2B4A4728259A6E00EADF27 /* GNBProjectTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B2B4A4828259A6E00EADF27 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8B2B4A5328259A6E00EADF27 /* GNBProjectUITestsLaunchTests.swift in Sources */,
-				8B2B4A5128259A6E00EADF27 /* GNBProjectUITests.swift in Sources */,
+				8BEBD6F92827CDA6002B7784 /* XCTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,11 +417,6 @@
 			isa = PBXTargetDependency;
 			target = 8B2B4A2B28259A6B00EADF27 /* GNBProject */;
 			targetProxy = 8B2B4A4328259A6E00EADF27 /* PBXContainerItemProxy */;
-		};
-		8B2B4A4E28259A6E00EADF27 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8B2B4A2B28259A6B00EADF27 /* GNBProject */;
-			targetProxy = 8B2B4A4D28259A6E00EADF27 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -669,15 +613,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.braiscastro.GNBProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GNBProject.app/GNBProject";
@@ -689,11 +640,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.braiscastro.GNBProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -701,42 +658,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GNBProject.app/GNBProject";
-			};
-			name = Release;
-		};
-		8B2B4A5D28259A6E00EADF27 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7ACUHP269Y;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.braiscastro.GNBProjectUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GNBProject;
-			};
-			name = Debug;
-		};
-		8B2B4A5E28259A6E00EADF27 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7ACUHP269Y;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.braiscastro.GNBProjectUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GNBProject;
 			};
 			name = Release;
 		};
@@ -770,15 +691,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8B2B4A5C28259A6E00EADF27 /* Build configuration list for PBXNativeTarget "GNBProjectUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8B2B4A5D28259A6E00EADF27 /* Debug */,
-				8B2B4A5E28259A6E00EADF27 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -790,6 +702,14 @@
 				version = 5.6.1;
 			};
 		};
+		8BEBD6F52827CD66002B7784 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -797,6 +717,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8B2B4A7B2825AABD00EADF27 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		8BEBD6FB2827CE08002B7784 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B2B4A7B2825AABD00EADF27 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		8BEBD6FD2827CE08002B7784 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BEBD6F52827CD66002B7784 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
