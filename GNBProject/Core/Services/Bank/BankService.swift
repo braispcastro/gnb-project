@@ -29,9 +29,9 @@ final class BankService {
             
             switch self {
             case .rates:
-                return URL(string: "http://quiet-stone-2094.herokuapp.com/rates")
+                return URL(string: "\(Constants.kBaseUrl)/rates")
             case .transactions:
-                return URL(string: "http://quiet-stone-2094.herokuapp.com/transactions")
+                return URL(string: "\(Constants.kBaseUrl)/transactions")
             }
         }
     }

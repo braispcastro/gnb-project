@@ -38,14 +38,17 @@ class TransactionInfoPresenterTest: XCTestCase {
         return [
             Bank.Transaction(sku: "SKU1", amount: "23.5", currency: "EUR"),
             Bank.Transaction(sku: "SKU1", amount: "24.5", currency: "EUR"),
-            Bank.Transaction(sku: "SKU1", amount: "6.8", currency: "USD")
+            Bank.Transaction(sku: "SKU1", amount: "9.8", currency: "USD"),
+            Bank.Transaction(sku: "SKU1", amount: "20.8", currency: "CAD")
         ]
     }
     
     private func mockRates() -> [Bank.Rate] {
         return [
             Bank.Rate(from: "EUR", to: "USD", rate: "1.05"),
-            Bank.Rate(from: "USD", to: "EUR", rate: "0.95")
+            Bank.Rate(from: "USD", to: "EUR", rate: "0.95"),
+            Bank.Rate(from: "USD", to: "CAD", rate: "1.29"),
+            Bank.Rate(from: "CAD", to: "USD", rate: "0.78")
         ]
     }
     
@@ -57,11 +60,12 @@ class TransactionInfoPresenterTest: XCTestCase {
         let transactions: [TransactionInfo.Transaction] = [
             TransactionInfo.Transaction(sku: "SKU1 - 23.5 EUR", euros: "Converted value: 24 EUR"),
             TransactionInfo.Transaction(sku: "SKU1 - 24.5 EUR", euros: "Converted value: 24 EUR"),
-            TransactionInfo.Transaction(sku: "SKU1 - 6.8 USD", euros: "Converted value: 6 EUR")
+            TransactionInfo.Transaction(sku: "SKU1 - 9.8 USD", euros: "Converted value: 9 EUR"),
+            TransactionInfo.Transaction(sku: "SKU1 - 20.8 CAD", euros: "Converted value: 15 EUR")
         ]
         let expectedViewModel = TransactionInfo.ViewModel(title: "SKU1",
                                                           transactions: transactions,
-                                                          total: "TOTAL: 54 EUR")
+                                                          total: "TOTAL: 72 EUR")
         
         expect(self.spyViewController.viewModel).toEventually(equal(expectedViewModel))
         expect(self.spyViewController.showCalled).toEventually(equal(1))

@@ -41,15 +41,15 @@ final class TransactionInfoPresenter {
         transactions.forEach { transaction in
             guard let price = Double(transaction.amount) else { return }
             
-            if transaction.currency == "EUR" {
+            if transaction.currency == Constants.kCurrencyTo {
                 let roundedPrice = price.roundHalfToEven()
                 convertedTransactions.append(TransactionInfo.Transaction(sku: "\(transaction.sku) - \(transaction.amount) \(transaction.currency)",
-                                                                         euros: "Converted value: \(roundedPrice) EUR"))
+                                                                         euros: "Converted value: \(roundedPrice) \(Constants.kCurrencyTo)"))
                 total += roundedPrice
-            } else if let rate = getConversionRate(from: transaction.currency, to: "EUR") {
+            } else if let rate = getConversionRate(from: transaction.currency, to: Constants.kCurrencyTo) {
                 let roundedPrice = (price * rate).roundHalfToEven()
                 convertedTransactions.append(TransactionInfo.Transaction(sku: "\(transaction.sku) - \(transaction.amount) \(transaction.currency)",
-                                                                         euros: "Converted value: \(roundedPrice) EUR"))
+                                                                         euros: "Converted value: \(roundedPrice) \(Constants.kCurrencyTo)"))
                 total += roundedPrice
             }
         }
