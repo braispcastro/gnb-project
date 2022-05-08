@@ -9,7 +9,7 @@ import Foundation
 
 enum TransactionList {
     
-    struct ViewModel {
+    struct ViewModel: Equatable {
         let title: String
     }
     

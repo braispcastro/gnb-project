@@ -34,6 +34,8 @@
 		8BEBD6F92827CDA6002B7784 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBD6F82827CDA6002B7784 /* XCTestCase.swift */; };
 		8BEBD6FC2827CE08002B7784 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8BEBD6FB2827CE08002B7784 /* Alamofire */; };
 		8BEBD6FE2827CE08002B7784 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 8BEBD6FD2827CE08002B7784 /* Nimble */; };
+		8BEBD7032827CEEF002B7784 /* TransactionListPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBD7022827CEEF002B7784 /* TransactionListPresenterTest.swift */; };
+		8BEBD7072827D721002B7784 /* TransactionInfoPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBD7062827D721002B7784 /* TransactionInfoPresenterTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		8B9FC8C02827589A008F2894 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		8BEBD6F02827BBBB002B7784 /* Double+HalfToEven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+HalfToEven.swift"; sourceTree = "<group>"; };
 		8BEBD6F82827CDA6002B7784 /* XCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
+		8BEBD7022827CEEF002B7784 /* TransactionListPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListPresenterTest.swift; sourceTree = "<group>"; };
+		8BEBD7062827D721002B7784 /* TransactionInfoPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionInfoPresenterTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,11 +123,11 @@
 		8B2B4A2E28259A6B00EADF27 /* GNBProject */ = {
 			isa = PBXGroup;
 			children = (
-				8B2B4A2F28259A6B00EADF27 /* AppDelegate.swift */,
 				8B2B4A7E2825ADED00EADF27 /* Core */,
 				8B2B4A5F28259B6A00EADF27 /* Modules */,
 				8B2B4A6128259BD700EADF27 /* Resources */,
 				8B2B4A6028259B7100EADF27 /* SupportingFiles */,
+				8B2B4A2F28259A6B00EADF27 /* AppDelegate.swift */,
 			);
 			path = GNBProject;
 			sourceTree = "<group>";
@@ -131,6 +135,7 @@
 		8B2B4A4528259A6E00EADF27 /* GNBProjectTests */ = {
 			isa = PBXGroup;
 			children = (
+				8BEBD6FF2827CEAD002B7784 /* Modules */,
 				8BEBD6F82827CDA6002B7784 /* XCTestCase.swift */,
 			);
 			path = GNBProjectTests;
@@ -264,6 +269,31 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8BEBD6FF2827CEAD002B7784 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8BEBD7002827CECB002B7784 /* TransactionList */,
+				8BEBD7012827CED3002B7784 /* TransactionInfo */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8BEBD7002827CECB002B7784 /* TransactionList */ = {
+			isa = PBXGroup;
+			children = (
+				8BEBD7022827CEEF002B7784 /* TransactionListPresenterTest.swift */,
+			);
+			path = TransactionList;
+			sourceTree = "<group>";
+		};
+		8BEBD7012827CED3002B7784 /* TransactionInfo */ = {
+			isa = PBXGroup;
+			children = (
+				8BEBD7062827D721002B7784 /* TransactionInfoPresenterTest.swift */,
+			);
+			path = TransactionInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,7 +436,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BEBD7072827D721002B7784 /* TransactionInfoPresenterTest.swift in Sources */,
 				8BEBD6F92827CDA6002B7784 /* XCTestCase.swift in Sources */,
+				8BEBD7032827CEEF002B7784 /* TransactionListPresenterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

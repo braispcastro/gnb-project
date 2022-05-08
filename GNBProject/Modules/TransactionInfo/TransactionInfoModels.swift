@@ -9,18 +9,18 @@ import Foundation
 
 enum TransactionInfo {
 
-    struct ViewModel {
+    struct ViewModel: Equatable {
         let title: String
         let transactions: [Transaction]
         let total: String
     }
     
-    struct Transaction {
+    struct Transaction: Equatable {
         let sku: String
         let euros: String
     }
     
-    struct Rate {
+    struct Rate: Equatable {
         let from: String
         let to: String
         let rate: Decimal

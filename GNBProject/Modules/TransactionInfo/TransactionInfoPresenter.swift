@@ -39,7 +39,14 @@ final class TransactionInfoPresenter {
     private func convertTransactionsToEuros(transactions: [Bank.Transaction]) -> [TransactionInfo.Transaction] {
         var convertedTransactions: [TransactionInfo.Transaction] = []
         transactions.forEach { transaction in
-            if let rate = getConversionRate(from: transaction.currency, to: "EUR"), let price = Double(transaction.amount) {
+            guard let price = Double(transaction.amount) else { return }
+            
+            if transaction.currency == "EUR" {
+                let roundedPrice = price.roundHalfToEven()
+                convertedTransactions.append(TransactionInfo.Transaction(sku: "\(transaction.sku) - \(transaction.amount) \(transaction.currency)",
+                                                                         euros: "Converted value: \(roundedPrice) EUR"))
+                total += roundedPrice
+            } else if let rate = getConversionRate(from: transaction.currency, to: "EUR") {
                 let roundedPrice = (price * rate).roundHalfToEven()
                 convertedTransactions.append(TransactionInfo.Transaction(sku: "\(transaction.sku) - \(transaction.amount) \(transaction.currency)",
                                                                          euros: "Converted value: \(roundedPrice) EUR"))
