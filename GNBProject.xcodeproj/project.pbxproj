@@ -33,7 +33,7 @@
 		8B9FC8BD2827581E008F2894 /* Graphable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FC8BC2827581E008F2894 /* Graphable.swift */; };
 		8B9FC8BF2827588F008F2894 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FC8BE2827588F008F2894 /* LinkedList.swift */; };
 		8B9FC8C12827589A008F2894 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FC8C02827589A008F2894 /* Queue.swift */; };
-		8BEBD6F12827BBBB002B7784 /* Double+HalfToEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBD6F02827BBBB002B7784 /* Double+HalfToEvent.swift */; };
+		8BEBD6F12827BBBB002B7784 /* Double+HalfToEven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBD6F02827BBBB002B7784 /* Double+HalfToEven.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +83,7 @@
 		8B9FC8BC2827581E008F2894 /* Graphable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graphable.swift; sourceTree = "<group>"; };
 		8B9FC8BE2827588F008F2894 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		8B9FC8C02827589A008F2894 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
-		8BEBD6F02827BBBB002B7784 /* Double+HalfToEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+HalfToEvent.swift"; sourceTree = "<group>"; };
+		8BEBD6F02827BBBB002B7784 /* Double+HalfToEven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+HalfToEven.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,7 +279,7 @@
 		8BEBD6EB2827AF48002B7784 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8BEBD6F02827BBBB002B7784 /* Double+HalfToEvent.swift */,
+				8BEBD6F02827BBBB002B7784 /* Double+HalfToEven.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -436,7 +436,7 @@
 				8B2B4A6F28259EA500EADF27 /* BaseViewController.swift in Sources */,
 				8B2B4A862825B44400EADF27 /* TransactionListInteractor.swift in Sources */,
 				8B9FC8C12827589A008F2894 /* Queue.swift in Sources */,
-				8BEBD6F12827BBBB002B7784 /* Double+HalfToEvent.swift in Sources */,
+				8BEBD6F12827BBBB002B7784 /* Double+HalfToEven.swift in Sources */,
 				8B2B4A6A28259D4F00EADF27 /* TransactionListRouter.swift in Sources */,
 				8B2B4A7A2825A0F600EADF27 /* TransactionInfoViewController.swift in Sources */,
 				8B2B4A822825AE1F00EADF27 /* BankService.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  Double+HalfToEvent.swift
+//  Double+HalfToEven.swift
 //  GNBProject
 //
 //  Created by Brais Castro on 8/5/22.
