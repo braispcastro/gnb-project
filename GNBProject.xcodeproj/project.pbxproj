@@ -27,6 +27,12 @@
 		8B2B4A822825AE1F00EADF27 /* BankService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B4A812825AE1F00EADF27 /* BankService.swift */; };
 		8B2B4A842825B04200EADF27 /* BankModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B4A832825B04200EADF27 /* BankModels.swift */; };
 		8B2B4A862825B44400EADF27 /* TransactionListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B4A852825B44400EADF27 /* TransactionListInteractor.swift */; };
+		8B9FC8B7282756EA008F2894 /* AdjacencyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FC8B6282756EA008F2894 /* AdjacencyList.swift */; };
+		8B9FC8B92827578C008F2894 /* EdgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FC8B82827578C008F2894 /* EdgeModel.swift */; };
+		8B9FC8BB282757D0008F2894 /* VertexModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FC8BA282757D0008F2894 /* VertexModel.swift */; };
+		8B9FC8BD2827581E008F2894 /* Graphable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FC8BC2827581E008F2894 /* Graphable.swift */; };
+		8B9FC8BF2827588F008F2894 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FC8BE2827588F008F2894 /* LinkedList.swift */; };
+		8B9FC8C12827589A008F2894 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FC8C02827589A008F2894 /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +76,12 @@
 		8B2B4A812825AE1F00EADF27 /* BankService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankService.swift; sourceTree = "<group>"; };
 		8B2B4A832825B04200EADF27 /* BankModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankModels.swift; sourceTree = "<group>"; };
 		8B2B4A852825B44400EADF27 /* TransactionListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListInteractor.swift; sourceTree = "<group>"; };
+		8B9FC8B6282756EA008F2894 /* AdjacencyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjacencyList.swift; sourceTree = "<group>"; };
+		8B9FC8B82827578C008F2894 /* EdgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeModel.swift; sourceTree = "<group>"; };
+		8B9FC8BA282757D0008F2894 /* VertexModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexModel.swift; sourceTree = "<group>"; };
+		8B9FC8BC2827581E008F2894 /* Graphable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graphable.swift; sourceTree = "<group>"; };
+		8B9FC8BE2827588F008F2894 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		8B9FC8C02827589A008F2894 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +221,7 @@
 		8B2B4A7E2825ADED00EADF27 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				8B9FC8B3282756AE008F2894 /* Currency */,
 				8B2B4A7F2825ADF600EADF27 /* Services */,
 			);
 			path = Core;
@@ -229,6 +242,35 @@
 				8B2B4A832825B04200EADF27 /* BankModels.swift */,
 			);
 			path = Bank;
+			sourceTree = "<group>";
+		};
+		8B9FC8B3282756AE008F2894 /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				8B9FC8B4282756BF008F2894 /* Graph */,
+				8B9FC8B5282756C7008F2894 /* Queue */,
+			);
+			path = Currency;
+			sourceTree = "<group>";
+		};
+		8B9FC8B4282756BF008F2894 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				8B9FC8B6282756EA008F2894 /* AdjacencyList.swift */,
+				8B9FC8B82827578C008F2894 /* EdgeModel.swift */,
+				8B9FC8BA282757D0008F2894 /* VertexModel.swift */,
+				8B9FC8BC2827581E008F2894 /* Graphable.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
+		8B9FC8B5282756C7008F2894 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				8B9FC8BE2827588F008F2894 /* LinkedList.swift */,
+				8B9FC8C02827589A008F2894 /* Queue.swift */,
+			);
+			path = Queue;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,20 +409,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B9FC8BD2827581E008F2894 /* Graphable.swift in Sources */,
+				8B9FC8B92827578C008F2894 /* EdgeModel.swift in Sources */,
 				8B2B4A6D28259D4F00EADF27 /* TransactionListBuilder.swift in Sources */,
 				8B2B4A6B28259D4F00EADF27 /* TransactionListModels.swift in Sources */,
 				8B2B4A6C28259D4F00EADF27 /* TransactionListViewController.swift in Sources */,
+				8B9FC8B7282756EA008F2894 /* AdjacencyList.swift in Sources */,
 				8B2B4A772825A0F600EADF27 /* TransactionInfoPresenter.swift in Sources */,
 				8B2B4A782825A0F600EADF27 /* TransactionInfoBuilder.swift in Sources */,
+				8B9FC8BF2827588F008F2894 /* LinkedList.swift in Sources */,
 				8B2B4A842825B04200EADF27 /* BankModels.swift in Sources */,
 				8B2B4A3028259A6B00EADF27 /* AppDelegate.swift in Sources */,
 				8B2B4A762825A0F600EADF27 /* TransactionInfoModels.swift in Sources */,
 				8B2B4A6928259D4F00EADF27 /* TransactionListPresenter.swift in Sources */,
 				8B2B4A6F28259EA500EADF27 /* BaseViewController.swift in Sources */,
 				8B2B4A862825B44400EADF27 /* TransactionListInteractor.swift in Sources */,
+				8B9FC8C12827589A008F2894 /* Queue.swift in Sources */,
 				8B2B4A6A28259D4F00EADF27 /* TransactionListRouter.swift in Sources */,
 				8B2B4A7A2825A0F600EADF27 /* TransactionInfoViewController.swift in Sources */,
 				8B2B4A822825AE1F00EADF27 /* BankService.swift in Sources */,
+				8B9FC8BB282757D0008F2894 /* VertexModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 protocol TransactionInfoViewControllerProtocol {
     func show(viewModel: TransactionInfo.ViewModel)
@@ -42,7 +43,22 @@ final class TransactionInfoPresenter {
     }
     
     private func getAllRates() {
-        //TODO: Dijkstra
+        let exchanges = AdjacencyList<String>()
+        let uniqueCurrency = Array(Set(rates.map { $0.from }))
+        var exchangeGraph: [String: Vertex<String>] = [:]
+        uniqueCurrency.forEach { item in
+            exchangeGraph[item] = exchanges.createVertex(data: item)
+        }
+        
+        rates.forEach { rate in
+            exchanges.add(.directed, from: exchangeGraph[rate.from]!, to: exchangeGraph[rate.to]!, weight: 1)
+        }
+        
+        if let edges = exchanges.breadthFirstSearch(from: exchangeGraph["EUR"]!, to: exchangeGraph["AUD"]!) {
+            for edge in edges {
+                print("\(edge.source) - \(edge.destination)")
+            }
+        }
     }
     
 }
@@ -58,4 +74,9 @@ extension TransactionInfoPresenter: TransactionInfoPresenterProtocol {
         viewController.show(viewModel: viewModel)
     }
 
+}
+
+struct Convertion: Hashable {
+    let from: String
+    let to: String
 }
