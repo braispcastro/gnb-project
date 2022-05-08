@@ -21,6 +21,10 @@ final class TransactionInfoPresenter {
     private let viewController: TransactionInfoViewControllerProtocol!
     private let rates: [Bank.Rate]!
     private let transactions: [Bank.Transaction]!
+    
+    private var exchanges: AdjacencyList<String>!
+    private var exchangeGraph: [String: Vertex<String>]!
+    private var total: Int = 0
 
     init(viewController: TransactionInfoViewControllerProtocol,
          rates: [Bank.Rate],
@@ -33,19 +37,22 @@ final class TransactionInfoPresenter {
     // MARK: - Private Methods
     
     private func convertTransactionsToEuros(transactions: [Bank.Transaction]) -> [TransactionInfo.Transaction] {
-        getAllRates()
         var convertedTransactions: [TransactionInfo.Transaction] = []
         transactions.forEach { transaction in
-            convertedTransactions.append(TransactionInfo.Transaction(sku: transaction.sku, euros: "\(transaction.amount) \(transaction.currency)"))
+            if let rate = getConversionRate(from: transaction.currency, to: "EUR"), let price = Double(transaction.amount) {
+                let roundedPrice = (price * rate).roundHalfToEven()
+                convertedTransactions.append(TransactionInfo.Transaction(sku: transaction.sku, euros: "\(roundedPrice) EUR"))
+                total += roundedPrice
+            }
         }
         
         return convertedTransactions
     }
     
     private func getAllRates() {
-        let exchanges = AdjacencyList<String>()
+        exchanges = AdjacencyList<String>()
         let uniqueCurrency = Array(Set(rates.map { $0.from }))
-        var exchangeGraph: [String: Vertex<String>] = [:]
+        exchangeGraph = [:]
         uniqueCurrency.forEach { item in
             exchangeGraph[item] = exchanges.createVertex(data: item)
         }
@@ -53,12 +60,25 @@ final class TransactionInfoPresenter {
         rates.forEach { rate in
             exchanges.add(.directed, from: exchangeGraph[rate.from]!, to: exchangeGraph[rate.to]!, weight: 1)
         }
-        
-        if let edges = exchanges.breadthFirstSearch(from: exchangeGraph["EUR"]!, to: exchangeGraph["AUD"]!) {
+    }
+    
+    private func getConversionRate(from: String, to: String) -> Double? {
+        var rate: Double?
+        if let edges = exchanges.breadthFirstSearch(from: exchangeGraph[from]!, to: exchangeGraph[to]!) {
             for edge in edges {
-                print("\(edge.source) - \(edge.destination)")
+                if let convertion = rates.first(where: { $0.from == edge.source.description && $0.to == edge.destination.description }), let convertionRate = Double(convertion.rate) {
+                    if rate == nil {
+                        rate = convertionRate
+                    } else {
+                        rate = rate! * convertionRate
+                    }
+                }
             }
+            
+            return rate
         }
+        
+        return nil
     }
     
 }
@@ -66,10 +86,12 @@ final class TransactionInfoPresenter {
 extension TransactionInfoPresenter: TransactionInfoPresenterProtocol {
     
     func prepareView() {
+        getAllRates()
+        
         let convertedTransactions = convertTransactionsToEuros(transactions: transactions)
         let viewModel = TransactionInfo.ViewModel(title: transactions.first!.sku,
                                                   transactions: convertedTransactions,
-                                                  total: "Total: 100 EUR")
+                                                  total: "TOTAL: \(total) EUR")
         
         viewController.show(viewModel: viewModel)
     }

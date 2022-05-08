@@ -87,13 +87,15 @@ extension TransactionInfoViewController: UITableViewDataSource, UITableViewDeleg
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
+        /*guard let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
             fatalError("Not registered for tableView")
-        }
+        }*/
+        
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         
         let item = viewModel.transactions[indexPath.row]
         cell.textLabel?.text = item.sku
-        cell.detailTextLabel?.text = "\(item.euros) EUR"
+        cell.detailTextLabel?.text = "\(item.euros)"
         return cell
     }
     
